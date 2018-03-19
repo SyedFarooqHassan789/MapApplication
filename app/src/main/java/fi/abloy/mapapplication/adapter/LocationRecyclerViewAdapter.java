@@ -16,23 +16,23 @@ import fi.abloy.mapapplication.recyclerview.LocationRecyclerViewHolder;
 
 
 public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRecyclerViewHolder> {
-    private List<Location> getLocationList;
+    private List<Location> locationList;
     private IOnItemClickListener iOnItemClickListener;
 
     public LocationRecyclerViewAdapter(IOnItemClickListener iOnItemClickListener) {
-        this.getLocationList = new ArrayList<>();
+        this.locationList = new ArrayList<>();
         this.iOnItemClickListener = iOnItemClickListener;
     }
 
     @Override
     public int getItemCount() {
-        return getLocationList.size();
+        return locationList.size();
     }
 
     @Override
     public void onBindViewHolder(@NonNull LocationRecyclerViewHolder holder, final int position) {
-        final Location getLocation = getLocationList.get(position);
-        holder.textViewLocationName.setText(getLocation.getDisplayName());
+        final Location mLocation = locationList.get(position);
+        holder.textViewLocationName.setText(mLocation.getDisplayName());
     }
 
     /*Creates the view for recycler view*/
@@ -42,37 +42,37 @@ public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRe
         ViewGroup mViewGroup = (ViewGroup) layoutInflater.inflate(
                 R.layout.location_recyclerview_item, viewGroup, false);
 
-        final LocationRecyclerViewHolder recyclerViewHolder = new LocationRecyclerViewHolder(mViewGroup);
+        final LocationRecyclerViewHolder locationRecyclerViewHolder = new LocationRecyclerViewHolder(mViewGroup);
 
-        recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        locationRecyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iOnItemClickListener.onItemClick(v, getLocationList.get(recyclerViewHolder.getAdapterPosition()));
+                iOnItemClickListener.onItemClick(v, locationList.get(locationRecyclerViewHolder.getAdapterPosition()));
             }
         });
 
-        return recyclerViewHolder;
+        return locationRecyclerViewHolder;
     }
 
     //Adding item in the recycler view
-    public void add(final Location locationInfo) {
-        getLocationList.add(locationInfo);
+    public void add(final Location location) {
+        locationList.add(location);
         notifyDataSetChanged();
     }
 
     //Adding all item in the recycler view
-    public void addAll(final List<Location> getLocationList) {
-        this.getLocationList.addAll(getLocationList);
+    public void addAll(final List<Location> locationList) {
+        this.locationList.addAll(locationList);
         notifyDataSetChanged();
     }
 
     //Removing item from recycler view
-    public void removeAll(final List<Location> getLocationList) {
-        getLocationList.removeAll(getLocationList);
+    public void removeAll(final List<Location> locationList) {
+        locationList.removeAll(locationList);
         notifyDataSetChanged();
     }
 
-    public List<Location> getGetLocationList() {
-        return getLocationList;
+    public List<Location> getLocationList() {
+        return locationList;
     }
 }

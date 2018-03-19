@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
     @Override
     public boolean onQueryTextSubmit(String query) {
         excludedIdsList.clear();
-        locationRecyclerViewAdapter.removeAll(locationRecyclerViewAdapter.getGetLocationList());
+        locationRecyclerViewAdapter.removeAll(locationRecyclerViewAdapter.getLocationList());
         this.query = query;
         getLocation(query, excludedIdsList);
         return true;

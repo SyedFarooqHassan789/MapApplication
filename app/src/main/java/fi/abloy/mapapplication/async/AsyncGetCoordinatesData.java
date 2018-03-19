@@ -67,7 +67,6 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
         Double totalArea = 0.0;
         Double firstTerm = 0.0, secondTerm = 0.0;
         Double area;
-        pointArrayList = new ArrayList<>();
         while (i < points.size()) {
             Point point1 = points.get(i);
             Point point2 = points.get(j);

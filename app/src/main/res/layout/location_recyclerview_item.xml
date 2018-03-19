@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear_layout_location_info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@android:color/white"
+    android:elevation="@dimen/layout_elevation"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:gravity="center"
+    android:minHeight="@dimen/location_list_Item_layout_height"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text_view_location_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="@dimen/padding_default"
+        android:paddingRight="@dimen/padding_default"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/location_list_tv_size"
+        tools:text="location name" />
+
+</LinearLayout>

@@ -23,10 +23,10 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
 
     @Override
     protected Point doInBackground(Object... params) {
-        Location getLocation = (Location) params[0];
+        Location mLocation = (Location) params[0];
 
-        if (getLocation.getGeojson().getType().equals("Polygon")) {
-            ArrayList<ArrayList<ArrayList<Double>>> coordinates = (ArrayList<ArrayList<ArrayList<Double>>>) getLocation.getGeojson().getCoordinates();
+        if (mLocation.getGeojson().getType().equals("Polygon")) {
+            ArrayList<ArrayList<ArrayList<Double>>> coordinates = (ArrayList<ArrayList<ArrayList<Double>>>) mLocation.getGeojson().getCoordinates();
             for (int i = 0; i < coordinates.size(); i++)
                 for (int j = 0; j < coordinates.get(i).size(); j++)
                     for (int k = 0; k < coordinates.get(i).get(j).size() - 1; k++) {
@@ -38,16 +38,16 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
                     }
             point = centerPolygon(pointArrayList);
 
-        } else if (getLocation.getGeojson().getType().equals("Point")) {
-            ArrayList<Double> coordinates = (ArrayList<Double>) getLocation.getGeojson().getCoordinates();
+        } else if (mLocation.getGeojson().getType().equals("Point")) {
+            ArrayList<Double> coordinates = (ArrayList<Double>) mLocation.getGeojson().getCoordinates();
             for (int i = 0; i < coordinates.size() - 1; i++) {
                 point = new Point();
                 point.setLongitude(coordinates.get(i));
                 point.setLatitude(coordinates.get(i + 1));
             }
 
-        } else if (getLocation.getGeojson().getType().equals("LineString")) {
-            ArrayList<ArrayList<Double>> coordinates = (ArrayList<ArrayList<Double>>) getLocation.getGeojson().getCoordinates();
+        } else if (mLocation.getGeojson().getType().equals("LineString")) {
+            ArrayList<ArrayList<Double>> coordinates = (ArrayList<ArrayList<Double>>) mLocation.getGeojson().getCoordinates();
 
             for (int i = 0; i < coordinates.size(); i++)
                 for (int j = 0; j < coordinates.get(i).size() - 1; j++) {
@@ -61,15 +61,15 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
         return point;
     }
 
-    private Point centerPolygon(ArrayList<Point> points) {
+    private Point centerPolygon(ArrayList<Point> pointArrayList) {
         int i = 0;
-        int j = points.size() - 1;
+        int j = pointArrayList.size() - 1;
         Double totalArea = 0.0;
         Double firstTerm = 0.0, secondTerm = 0.0;
         Double area;
-        while (i < points.size()) {
-            Point point1 = points.get(i);
-            Point point2 = points.get(j);
+        while (i < pointArrayList.size()) {
+            Point point1 = pointArrayList.get(i);
+            Point point2 = pointArrayList.get(j);
 
             area = point1.getLongitude() * point2.getLatitude() - point2.getLongitude() * point1.getLatitude();
             totalArea += area;
@@ -89,15 +89,15 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
 
     }
 
-    private Point centerLinestring(ArrayList<Point> points) {
+    private Point centerLinestring(ArrayList<Point> pointArrayList) {
 
         Double longitude = 0.0, latitude = 0.0;
-        for (int i = 0; i < points.size(); i++) {
-            latitude += points.get(i).getLatitude();
-            longitude += points.get(i).getLongitude();
+        for (int i = 0; i < pointArrayList.size(); i++) {
+            latitude += pointArrayList.get(i).getLatitude();
+            longitude += pointArrayList.get(i).getLongitude();
         }
 
-        int totalPoints = points.size();
+        int totalPoints = pointArrayList.size();
         longitude = longitude / totalPoints;
         latitude = latitude / totalPoints;
 
@@ -110,8 +110,8 @@ public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
     }
 
     @Override
-    protected void onPostExecute(Point result) {
-        iResponseHelper.getData(result);
+    protected void onPostExecute(Point point) {
+        iResponseHelper.getData(point);
     }
 
     @Override

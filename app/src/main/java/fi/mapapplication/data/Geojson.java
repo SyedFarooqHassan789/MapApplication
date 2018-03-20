@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication.data;
+package fi.mapapplication.data;
 
 
 import com.google.gson.annotations.Expose;

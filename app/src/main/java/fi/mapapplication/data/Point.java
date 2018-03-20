@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication.data;
+package fi.mapapplication.data;
 
 import java.io.Serializable;
 

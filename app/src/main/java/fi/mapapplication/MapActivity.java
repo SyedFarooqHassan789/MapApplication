@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication;
+package fi.mapapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import fi.abloy.mapapplication.common.Extra;
-import fi.abloy.mapapplication.data.Point;
+import fi.mapapplication.common.Extra;
+import fi.mapapplication.data.Point;
 
 public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
     private double latitude;

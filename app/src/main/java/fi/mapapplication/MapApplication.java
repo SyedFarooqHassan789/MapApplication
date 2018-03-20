@@ -1,10 +1,10 @@
-package fi.abloy.mapapplication;
+package fi.mapapplication;
 
 import android.app.Application;
 
-import fi.abloy.mapapplication.interfaces.INominatimLocationService;
+import fi.mapapplication.interfaces.INominatimLocationService;
 
-import static fi.abloy.mapapplication.common.Extra.NOMINATIM_API_BASE_URL;
+import static fi.mapapplication.common.Extra.NOMINATIM_API_BASE_URL;
 
 
 public class MapApplication extends Application {

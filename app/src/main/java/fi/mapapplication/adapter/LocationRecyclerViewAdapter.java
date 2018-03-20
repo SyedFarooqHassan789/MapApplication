@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication.adapter;
+package fi.mapapplication.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import fi.abloy.mapapplication.R;
-import fi.abloy.mapapplication.data.Location;
-import fi.abloy.mapapplication.interfaces.IOnItemClickListener;
-import fi.abloy.mapapplication.recyclerview.LocationRecyclerViewHolder;
+import fi.mapapplication.R;
+import fi.mapapplication.data.Location;
+import fi.mapapplication.interfaces.IOnItemClickListener;
+import fi.mapapplication.recyclerview.LocationRecyclerViewHolder;
 
 
 public class LocationRecyclerViewAdapter extends RecyclerView.Adapter<LocationRecyclerViewHolder> {

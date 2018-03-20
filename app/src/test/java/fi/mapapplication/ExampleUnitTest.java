@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication;
+package fi.mapapplication;
 
 import org.junit.Test;
 

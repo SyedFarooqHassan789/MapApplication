@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication;
+package fi.mapapplication;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -14,13 +14,13 @@ import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
-import fi.abloy.mapapplication.adapter.LocationRecyclerViewAdapter;
-import fi.abloy.mapapplication.async.AsyncGetCoordinatesData;
-import fi.abloy.mapapplication.common.Extra;
-import fi.abloy.mapapplication.data.Location;
-import fi.abloy.mapapplication.data.Point;
-import fi.abloy.mapapplication.interfaces.IOnItemClickListener;
-import fi.abloy.mapapplication.interfaces.IResponseHelper;
+import fi.mapapplication.adapter.LocationRecyclerViewAdapter;
+import fi.mapapplication.async.AsyncGetCoordinatesData;
+import fi.mapapplication.common.Extra;
+import fi.mapapplication.data.Location;
+import fi.mapapplication.data.Point;
+import fi.mapapplication.interfaces.IOnItemClickListener;
+import fi.mapapplication.interfaces.IResponseHelper;
 
 public class MainActivity extends AppCompatActivity implements SearchView.OnQueryTextListener, IOnItemClickListener {
     private RecyclerView recyclerViewLocation;

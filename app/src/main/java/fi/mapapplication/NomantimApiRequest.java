@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication;
+package fi.mapapplication;
 
 
 import android.text.TextUtils;
@@ -6,9 +6,9 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import fi.abloy.mapapplication.common.Extra;
-import fi.abloy.mapapplication.data.Location;
-import fi.abloy.mapapplication.interfaces.IResponseHelper;
+import fi.mapapplication.common.Extra;
+import fi.mapapplication.data.Location;
+import fi.mapapplication.interfaces.IResponseHelper;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

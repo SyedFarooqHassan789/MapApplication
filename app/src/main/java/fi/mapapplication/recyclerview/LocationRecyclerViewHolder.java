@@ -1,11 +1,11 @@
-package fi.abloy.mapapplication.recyclerview;
+package fi.mapapplication.recyclerview;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import fi.abloy.mapapplication.R;
+import fi.mapapplication.R;
 
 
 public class LocationRecyclerViewHolder extends RecyclerView.ViewHolder {

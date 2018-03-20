@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication.common;
+package fi.mapapplication.common;
 
 public abstract class Extra {
     public static final String NOMINATIM_API_BASE_URL = "https://nominatim.openstreetmap.org/";

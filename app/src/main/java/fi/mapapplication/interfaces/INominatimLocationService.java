@@ -1,9 +1,9 @@
-package fi.abloy.mapapplication.interfaces;
+package fi.mapapplication.interfaces;
 
 
 import java.util.ArrayList;
 
-import fi.abloy.mapapplication.data.Location;
+import fi.mapapplication.data.Location;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;

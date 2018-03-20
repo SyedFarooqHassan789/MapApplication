@@ -1,4 +1,4 @@
-package fi.abloy.mapapplication.interfaces;
+package fi.mapapplication.interfaces;
 
 
 import android.view.View;

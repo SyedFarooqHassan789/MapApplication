@@ -1,14 +1,14 @@
-package fi.abloy.mapapplication.async;
+package fi.mapapplication.async;
 
 
 import android.os.AsyncTask;
 
 import java.util.ArrayList;
 
-import fi.abloy.mapapplication.common.Extra;
-import fi.abloy.mapapplication.data.Location;
-import fi.abloy.mapapplication.data.Point;
-import fi.abloy.mapapplication.interfaces.IResponseHelper;
+import fi.mapapplication.common.Extra;
+import fi.mapapplication.data.Location;
+import fi.mapapplication.data.Point;
+import fi.mapapplication.interfaces.IResponseHelper;
 
 
 public class AsyncGetCoordinatesData extends AsyncTask<Object, Void, Point> {
